@@ -45,3 +45,18 @@ artifact is independently verified; no such publication is claimed here.
   All 257 audited registry packages had verified signatures; 44 had verified
   attestations. The eleven-component production/vendored license inventory and
   vendored source digest passed.
+
+## 2026-08-28 remote Windows harness correction
+
+The first GitHub branch and tag workflows passed Linux quality, coverage,
+packaging, all Node 12-24 production jobs, real Windows issue-239 behavior,
+CodeQL, and the Windows webpack 5 build. The disposable webpack 4 harness then
+stopped before installation because Node cannot execute `npm.cmd` directly
+through `execFileSync` on Windows (`spawnSync npm.cmd EINVAL`). This was a CI
+harness invocation defect, not a package, registry artifact, or webpack result.
+
+The repository-only harness now requests Node's shell path only for the Windows
+batch-file invocation. The published tarball is unchanged: release scripts and
+tests are not shipped package files, and the immutable registry/GitHub bytes
+remain authoritative. The corrected main workflow must pass both Windows
+webpack 4 and 5 jobs before this post-release record is considered complete.

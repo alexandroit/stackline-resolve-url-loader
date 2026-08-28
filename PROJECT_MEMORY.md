@@ -41,3 +41,13 @@ without weakening real compatibility coverage.
 
 The 2026-08-28 local gate passed. No registry publication, repository creation,
 remote automation change, adoption work, or release handoff was performed.
+
+## 2026-08-28 — post-release Windows CI correction
+
+The immutable artifact and all shipped runtime files remain unchanged. The
+first remote Windows webpack job passed webpack 5 and then failed before the
+disposable webpack 4 install with `spawnSync npm.cmd EINVAL`. Node requires a
+shell when launching a Windows `.cmd` batch file; the repository-only isolated
+harness now selects that shell path on Windows and retains direct execution on
+Unix. Record the original tag-run failure precisely and require the corrected
+main workflow to prove webpack 4/5 on Windows before closing the cycle.

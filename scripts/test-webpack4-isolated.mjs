@@ -15,7 +15,11 @@ function run(command, arguments_, cwd = root, stdio = ['ignore', 'pipe', 'pipe']
     cwd,
     encoding: 'utf8',
     env: { ...process.env, NO_UPDATE_NOTIFIER: '1' },
-    stdio
+    stdio,
+    // Windows cannot execute npm.cmd directly through CreateProcess. Let
+    // Node route only that batch-file invocation through cmd.exe; Unix keeps
+    // the argument-safe direct exec path.
+    shell: process.platform === 'win32' && command === npm
   })
 }
 
