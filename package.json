@@ -1,0 +1,104 @@
+{
+  "name": "@stackline/resolve-url-loader",
+  "version": "1.0.0",
+  "description": "Compatibility-first webpack Sass URL rebasing loader with maintained packaging and first-party types",
+  "type": "commonjs",
+  "main": "./index.js",
+  "module": "./index.mjs",
+  "types": "./index.d.ts",
+  "files": [
+    "docs",
+    "lib",
+    "licenses",
+    "index.js",
+    "index.mjs",
+    "index.d.ts",
+    "index.d.cts",
+    "index.d.mts",
+    "CHANGELOG.md",
+    "COMPATIBILITY_CONTRACT.md",
+    "CONTRIBUTING.md",
+    "LICENSE",
+    "MIGRATION.md",
+    "NOTICE",
+    "PUBLISHING.md",
+    "README.md",
+    "SECURITY.md",
+    "THIRD_PARTY_LICENSES.md",
+    "VERIFICATION.md"
+  ],
+  "scripts": {
+    "clean": "node scripts/clean.mjs",
+    "build": "node scripts/build.mjs",
+    "lint": "eslint index.js index.mjs lib scripts test eslint.config.mjs",
+    "test:upstream": "node --test test/upstream.test.cjs",
+    "test:differential": "node --test test/differential.test.cjs",
+    "test:contract": "node --test test/contract.test.cjs test/malformed-security.test.cjs test/stress.test.cjs test/windows-path.test.cjs",
+    "test:webpack": "node --test test/webpack.test.cjs && node scripts/test-webpack4-isolated.mjs",
+    "test:esm": "node test/esm.mjs",
+    "test:types": "node node_modules/typescript-3-9/bin/tsc -p test/types/tsconfig.legacy.json && node node_modules/typescript/bin/tsc -p test/types/tsconfig.modern.json",
+    "test:runtime": "node scripts/check-runtime.mjs",
+    "test": "npm run test:upstream && npm run test:differential && npm run test:contract && npm run test:webpack && npm run test:esm && npm run test:types",
+    "test:coverage": "c8 --all --include='index.js' --include='lib/**/*.js' --exclude='lib/vendor/**' --check-coverage --lines 85 --functions 85 --branches 75 node --test test/upstream.test.cjs test/differential.test.cjs test/contract.test.cjs test/malformed-security.test.cjs test/stress.test.cjs test/windows-path.test.cjs",
+    "test:smoke": "node scripts/smoke-install.mjs",
+    "test:registry": "node scripts/smoke-registry.mjs",
+    "check:package": "publint && attw --pack .",
+    "check:licenses": "node scripts/check-licenses.mjs",
+    "check:release": "node scripts/check-release-metadata.mjs",
+    "check:vendor": "node scripts/check-vendor.mjs",
+    "pack:check": "npm pack --dry-run",
+    "artifact:prepare": "node scripts/create-artifact.mjs",
+    "audit:dependencies": "npm audit --omit=dev --audit-level=low",
+    "audit:all": "npm audit --audit-level=low",
+    "audit:signatures": "npm audit signatures",
+    "verify": "npm run clean && npm run lint && npm run build && npm test && npm run test:coverage && npm run test:runtime && npm run test:smoke && npm run check:package && npm run pack:check && npm run check:licenses && npm run check:release && npm run check:vendor && npm run audit:dependencies && npm run audit:all && npm run audit:signatures"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/alexandroit/stackline-resolve-url-loader.git"
+  },
+  "homepage": "https://alexandro.net/docs/vanilla/resolve-url-loader/",
+  "bugs": {
+    "url": "https://github.com/alexandroit/stackline-resolve-url-loader/issues"
+  },
+  "keywords": [
+    "webpack",
+    "loader",
+    "css",
+    "sass",
+    "source-map",
+    "url",
+    "stackline"
+  ],
+  "author": "Stackline Maintainers",
+  "contributors": [
+    "Ben Holloway"
+  ],
+  "license": "MIT",
+  "engines": {
+    "node": ">=12"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "dependencies": {
+    "loader-utils": "2.0.4",
+    "postcss": "8.5.26",
+    "regex-parser": "2.3.1",
+    "source-map": "0.6.1"
+  },
+  "devDependencies": {
+    "@arethetypeswrong/cli": "0.18.5",
+    "@eslint/js": "10.0.1",
+    "c8": "12.0.0",
+    "eslint": "10.9.1",
+    "globals": "16.4.0",
+    "publint": "0.3.24",
+    "resolve-url-loader-baseline": "npm:resolve-url-loader@5.0.0",
+    "sass": "1.103.1",
+    "sass-loader": "10.5.2",
+    "typescript": "7.0.2",
+    "typescript-3-9": "npm:typescript@3.9.10",
+    "webpack": "5.110.1"
+  }
+}

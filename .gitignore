@@ -1,0 +1,7 @@
+node_modules/
+coverage/
+.test-output/
+release-candidate/
+.release-candidate-staging-*/
+*.tgz
+*.log

@@ -1,0 +1,16 @@
+@stackline/resolve-url-loader is an independent maintained continuation of
+resolve-url-loader. It is not affiliated with or endorsed by Ben Holloway or
+the upstream project.
+
+The compatibility implementation derives from the MIT-licensed
+resolve-url-loader project:
+
+Copyright (c) 2016 Ben Holloway
+
+The vendored source-map processor derives from the MIT-licensed
+adjust-sourcemap-loader@4.0.0 source at commit 5f173eef. Its complete license is
+shipped at lib/vendor/adjust-sourcemap-loader/LICENSE.
+
+Stackline maintenance, the Windows file-URL correction, packaging,
+declarations, documentation, and additional tests are Copyright (c) 2026
+Stackline Maintainers.

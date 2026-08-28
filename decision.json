@@ -1,0 +1,46 @@
+{
+  "schema": "stackline-package-decision-v1",
+  "observationDate": "2026-08-28",
+  "observedAt": "2026-08-28T12:08:26Z",
+  "queueRank": 1,
+  "userPinned": false,
+  "upstream": {
+    "name": "resolve-url-loader",
+    "version": "5.0.0",
+    "target": "@stackline/resolve-url-loader",
+    "weeklyDownloads": 9292298,
+    "downloadPeriod": "2026-08-21:2026-08-27",
+    "tarballSha256": "305118c7e585071ebc610018b08b69d01071857ca5abd7e07a41df823ccecb19",
+    "sourceCommit": "e2695cde68f325f617825e168173df92236efb93",
+    "license": "MIT"
+  },
+  "decision": "GO",
+  "problem": "The current webpack/Sass URL-rebasing gap remains documented by sass-loader and used by active projects, while the sole-writer package has had no v5 release since 2022 and has unresolved Windows-path and maintenance issues.",
+  "activeUsers": [
+    "TerriaJS/terriajs",
+    "h5p/h5p-branching-scenario",
+    "Open-MBEE/exec-ve",
+    "ploi/ploi-core"
+  ],
+  "successorLandscape": "No current general-purpose maintained npm drop-in was found. Next.js vendors a tailored implementation, and current sass-loader documentation still recommends resolve-url-loader for this exact problem.",
+  "compatibilityContract": "Preserve the callable CommonJS webpack loader, Object.assign join helpers, packed deep lib entries, webpack 4/5 behavior, string/object source maps, source-relative/project-relative formats, custom join semantics, query/hash retention, Windows/POSIX paths, Node >=12, and legacy-key npm alias installation.",
+  "risk": "Source-map/path behavior is cross-platform and filesystem-sensitive; dependency modernization and Windows file-URL normalization can silently change emitted CSS or source maps.",
+  "maintenanceCost": "high: real webpack 4/5 builds, current and historical Sass pipelines, Windows/POSIX behavior, malformed maps, custom iterators, and packed consumer matrices must remain covered.",
+  "adoptionTargets": [
+    "TerriaJS/terriajs",
+    "h5p/h5p-branching-scenario",
+    "Open-MBEE/exec-ve",
+    "outl1ne/nova-menu-builder"
+  ],
+  "proofOfSuccess": "Differential upstream parity plus an issue-239 Windows regression, clean webpack 4/5 and current Dart Sass builds, Node 12-24 and Windows CI, TypeScript 3.9/current declarations, zero-finding production audit, exact Verdaccio/npm artifact verification, and one independently tested downstream migration.",
+  "sources": [
+    "https://registry.npmjs.org/resolve-url-loader",
+    "https://api.npmjs.org/downloads/point/2026-08-21:2026-08-27/resolve-url-loader",
+    "https://github.com/bholloway/resolve-url-loader/tree/e2695cde68f325f617825e168173df92236efb93",
+    "https://github.com/bholloway/resolve-url-loader/issues/239",
+    "https://github.com/bholloway/resolve-url-loader/pull/227",
+    "https://github.com/bholloway/resolve-url-loader/pull/228",
+    "https://github.com/webpack/sass-loader#problems-with-url",
+    "https://github.com/vercel/next.js/tree/canary/packages/next/src/build/webpack/loaders/resolve-url-loader"
+  ]
+}
