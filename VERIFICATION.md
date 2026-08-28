@@ -58,5 +58,33 @@ harness invocation defect, not a package, registry artifact, or webpack result.
 The repository-only harness now requests Node's shell path only for the Windows
 batch-file invocation. The published tarball is unchanged: release scripts and
 tests are not shipped package files, and the immutable registry/GitHub bytes
-remain authoritative. The corrected main workflow must pass both Windows
-webpack 4 and 5 jobs before this post-release record is considered complete.
+remain authoritative. Corrected main CI run `33173045990` passed all 12 jobs,
+including both Windows webpack 4 and 5 builds, the four-test real-Windows
+issue-239 suite, all Node 12-24 jobs, and packed-artifact validation. Corrected
+CodeQL run `33173045972` also passed.
+
+## 2026-08-28 release verification
+
+- Accepted artifact SHA-256:
+  `3037fbe003806509e97dc8c472ada32411acf269b4bb6b4c602627dde46c613a`.
+  Verdaccio, official npm, and the immutable GitHub release are byte-identical.
+- Official npm records `@stackline/resolve-url-loader@1.0.0` at
+  `2026-08-28T12:39:34.733Z`; `latest` is 1.0.0. Direct scoped and exact npm
+  alias installs plus callable/deep-entry smokes pass against both registries.
+- The GitHub release contains ten checksummed inventory, license, SBOM, notes,
+  checksum and tarball assets and reports `immutable: true`.
+- The initial remote source workflows passed Linux quality/package jobs, all
+  eight Node runtime jobs, real Windows issue-239 behavior, Windows webpack 5,
+  and CodeQL. Their overall CI conclusion records the repository-only Windows
+  webpack 4 `npm.cmd` invocation failure described above; the correction is on
+  main commit `631f49d11e31b22f2d0b15314719e32640a7540d`. Corrected CI run
+  `33173045990` passed all 12 jobs, including Windows webpack 4/5, and corrected
+  CodeQL run `33173045972` passed.
+- Documentation commit `9bce44d17ce94efae9537adc9c53f06e5a112297`, CI
+  run `33172839845`, and CodeQL run `33172839656`: PASS. Exact production
+  manifests, all 18 routes, examples, robots, sitemaps and dependency version
+  text pass origin, public and forced-edge checks.
+- Downstream PR https://github.com/zaproxy/browser-extension/pull/376 passes
+  DCO and Checkmarx in addition to local target gates. The different-repository
+  maintainer-decision issue is
+  https://github.com/gravity-ui/app-builder/issues/352.

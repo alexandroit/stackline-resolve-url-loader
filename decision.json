@@ -42,5 +42,104 @@
     "https://github.com/bholloway/resolve-url-loader/pull/228",
     "https://github.com/webpack/sass-loader#problems-with-url",
     "https://github.com/vercel/next.js/tree/canary/packages/next/src/build/webpack/loaders/resolve-url-loader"
-  ]
+  ],
+  "transition": "CODEX_READY -> RESEARCHING -> BUILDING -> PUBLISHED",
+  "canonicalState": "PUBLISHED",
+  "userPin": {
+    "selected": false,
+    "resolution": "NOT_PINNED",
+    "requiredNextCycleCleared": false
+  },
+  "artifact": {
+    "filename": "stackline-resolve-url-loader-1.0.0.tgz",
+    "preparedAt": "2026-08-28T12:38:41Z",
+    "sourceCommit": "5595617fc84396ab3874b06aab9a2e9546b86bdd",
+    "tag": "stackline-v1.0.0",
+    "sha1": "1b1856e5aeef738732137856617fecd5b525baf5",
+    "sha256": "3037fbe003806509e97dc8c472ada32411acf269b4bb6b4c602627dde46c613a",
+    "sha512": "321fae60bd3e9adecc406fb1a19340b124ff39da25f9fe48321e3f4edeb20770a1dfb9f5ecc2fb9a19d5c3b0bac2f73290923adea782f48ee860c8a5dff296fe",
+    "integrity": "sha512-Mh+uYL0+mt7MQG+xoZNAsST/Odol+f5IMh4/Tt6yB3Ch37n17ML7mhnVw7C6wvcykJI63qeC9I7oYMil3/KW/g==",
+    "packedSize": 45190,
+    "unpackedSize": 171542,
+    "fileCount": 76,
+    "modePolicy": "all shipped regular files are 0644",
+    "releaseAssets": 10
+  },
+  "publication": {
+    "artifactBuilt": true,
+    "verdaccioPublished": true,
+    "verdaccioByteVerification": "PASS",
+    "npmPublished": true,
+    "npmPublishedAt": "2026-08-28T12:39:34.733Z",
+    "npmPublisher": "alex360qc",
+    "officialByteVerification": "PASS",
+    "scopedAndAliasConsumers": "PASS",
+    "githubRepositoryCreated": true,
+    "githubReleaseImmutable": true,
+    "documentationPublished": true,
+    "adoptionPullRequest": "https://github.com/zaproxy/browser-extension/pull/376",
+    "adoptionIssue": "https://github.com/gravity-ui/app-builder/issues/352",
+    "remainingAdoptionDebt": "COVERAGE_COMPLETE",
+    "differentRepositoryCheck": "PASS"
+  },
+  "github": {
+    "repository": "https://github.com/alexandroit/stackline-resolve-url-loader",
+    "onlyBranch": "main",
+    "release": "https://github.com/alexandroit/stackline-resolve-url-loader/releases/tag/stackline-v1.0.0",
+    "releaseImmutable": true,
+    "releasePublishedAt": "2026-08-28T12:41:18Z",
+    "initialMainCi": "https://github.com/alexandroit/stackline-resolve-url-loader/actions/runs/33172085458",
+    "initialTagCi": "https://github.com/alexandroit/stackline-resolve-url-loader/actions/runs/33172085937",
+    "initialCodeql": "https://github.com/alexandroit/stackline-resolve-url-loader/actions/runs/33172085490",
+    "initialCiDisposition": "FAILED_WINDOWS_DISPOSABLE_WEBPACK4_NPM_CMD_INVOCATION_AFTER_ALL_PRODUCT_AND_OTHER_MATRIX_GATES_PASSED",
+    "correctedMainCommit": "631f49d11e31b22f2d0b15314719e32640a7540d",
+    "correctedMainCi": "https://github.com/alexandroit/stackline-resolve-url-loader/actions/runs/33173045990",
+    "correctedMainCiConclusion": "SUCCESS_12_OF_12_JOBS_INCLUDING_WINDOWS_WEBPACK_4_AND_5",
+    "correctedMainCodeql": "https://github.com/alexandroit/stackline-resolve-url-loader/actions/runs/33173045972",
+    "correctedMainCodeqlConclusion": "SUCCESS"
+  },
+  "documentation": {
+    "url": "https://alexandro.net/docs/vanilla/resolve-url-loader/",
+    "sourceRepository": "https://github.com/alexandroit/stackline-open-source",
+    "sourceCommit": "9bce44d17ce94efae9537adc9c53f06e5a112297",
+    "ci": "https://github.com/alexandroit/stackline-open-source/actions/runs/33172839845",
+    "codeql": "https://github.com/alexandroit/stackline-open-source/actions/runs/33172839656",
+    "packageFiles": 38,
+    "catalogFiles": 34,
+    "aggregateRoutes": 18,
+    "productionBackup": "/var/backups/stackline-docs/20260828T124842Z-resolve-url-loader",
+    "edgeFixBackup": "/var/backups/stackline-docs/20260828T125030Z-resolve-url-loader-edge-fix",
+    "originPublicAndCloudflareVerification": "PASS"
+  },
+  "adoption": {
+    "pullRequest": "https://github.com/zaproxy/browser-extension/pull/376",
+    "issue": "https://github.com/gravity-ui/app-builder/issues/352",
+    "differentRepositoryCheck": "PASS",
+    "coverage": "COMPLETE",
+    "lastObservedAt": "2026-08-28T12:56:16Z"
+  },
+  "canonicalDriveDecision": {
+    "id": "1ygGFNUta-_wpjS1Tk2cDXMr4LE6WpJSo",
+    "url": "https://drive.google.com/file/d/1ygGFNUta-_wpjS1Tk2cDXMr4LE6WpJSo/view",
+    "folderId": "1DrMsIKBMIDf8jQ_DRuIQA3f0dHoS5a5z",
+    "uploadedAt": "2026-08-28T13:01:02Z"
+  },
+  "canonicalDriveProjectMemory": {
+    "id": "1xZhGaOY77BdfmOAnxIwsx5opMZVa1TjG",
+    "url": "https://drive.google.com/file/d/1xZhGaOY77BdfmOAnxIwsx5opMZVa1TjG/view",
+    "folderId": "1DrMsIKBMIDf8jQ_DRuIQA3f0dHoS5a5z",
+    "uploadedAt": "2026-08-28T13:01:02Z"
+  },
+  "canonicalDriveReleaseVerification": {
+    "id": "1k8rM1TMsdUGWBwrdwBN4Tu9K5rsDoZQM",
+    "url": "https://drive.google.com/file/d/1k8rM1TMsdUGWBwrdwBN4Tu9K5rsDoZQM/view",
+    "folderId": "1DrMsIKBMIDf8jQ_DRuIQA3f0dHoS5a5z",
+    "uploadedAt": "2026-08-28T13:01:02Z"
+  },
+  "canonicalDriveAdoptionTargets": {
+    "id": "11jjcQdgXQuzuWekniqwKv02mova-oZxd",
+    "url": "https://drive.google.com/file/d/11jjcQdgXQuzuWekniqwKv02mova-oZxd/view",
+    "folderId": "1DrMsIKBMIDf8jQ_DRuIQA3f0dHoS5a5z",
+    "uploadedAt": "2026-08-28T13:01:02Z"
+  }
 }

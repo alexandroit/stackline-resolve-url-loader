@@ -49,5 +49,49 @@ first remote Windows webpack job passed webpack 5 and then failed before the
 disposable webpack 4 install with `spawnSync npm.cmd EINVAL`. Node requires a
 shell when launching a Windows `.cmd` batch file; the repository-only isolated
 harness now selects that shell path on Windows and retains direct execution on
-Unix. Record the original tag-run failure precisely and require the corrected
-main workflow to prove webpack 4/5 on Windows before closing the cycle.
+Unix. Corrected main CI run `33173045990` passed all 12 jobs, including Windows
+webpack 4/5 and the real-Windows issue-239 suite; corrected CodeQL run
+`33173045972` also passed. Preserve the original tag-run failure in the release
+record without changing the immutable tag or artifact.
+
+## 2026-08-28 — PUBLISHED
+
+- Transitioned `CODEX_READY -> RESEARCHING -> BUILDING -> PUBLISHED` from queue
+  rank 1 without a user pin. This continuous-program project is distinct from
+  the completed fixed thlorenz roster.
+- The accepted 76-file artifact was built once at 12:38:41Z from tagged commit
+  `5595617fc84396ab3874b06aab9a2e9546b86bdd`; SHA-256
+  `3037fbe003806509e97dc8c472ada32411acf269b4bb6b4c602627dde46c613a`.
+  Verdaccio, official npm, and the immutable GitHub release serve identical
+  bytes. Direct scoped and exact historical-key alias consumers pass.
+- Official npm records the one-time `alex360qc` publication at
+  `2026-08-28T12:39:34.733Z`. Public source, release and documentation are:
+  https://github.com/alexandroit/stackline-resolve-url-loader,
+  https://github.com/alexandroit/stackline-resolve-url-loader/releases/tag/stackline-v1.0.0,
+  and https://alexandro.net/docs/vanilla/resolve-url-loader/.
+- Documentation source commit
+  `9bce44d17ce94efae9537adc9c53f06e5a112297` passed CI and CodeQL. Production
+  contains exact 34-file catalog and 38-file package manifests, and the docs
+  aggregate sitemap contains all 18 package routes. Nginx, origin, public and
+  forced Cloudflare-edge checks pass. Recoverable backups are recorded in the
+  documentation project memory.
+
+## 2026-08-28 — adoption minimum covered
+
+- Opened the focused two-file migration PR
+  https://github.com/zaproxy/browser-extension/pull/376 after fresh zero-result
+  contact/competition searches. Frozen install, exact package/deep-entry smoke,
+  lint, 27 unit tests, six production bundles, DCO and Checkmarx pass. The PR
+  discloses replacement maintainership.
+- Opened the maintainer-decision issue
+  https://github.com/gravity-ui/app-builder/issues/352 in a different
+  repository after its own fresh deduplication and policy check. It offers
+  alias, intentional-retention, and remove/replace choices, discloses
+  maintainership, and makes no vulnerability claim.
+- Different-repository check: `PASS`; remaining adoption debt:
+  `COVERAGE_COMPLETE`. Do not follow up unsolicited.
+- Canonical Drive records preserve the dated decision
+  (`1ygGFNUta-_wpjS1Tk2cDXMr4LE6WpJSo`), project memory
+  (`1xZhGaOY77BdfmOAnxIwsx5opMZVa1TjG`), release verification
+  (`1k8rM1TMsdUGWBwrdwBN4Tu9K5rsDoZQM`), and adoption targets
+  (`11jjcQdgXQuzuWekniqwKv02mova-oZxd`) under the active-projects folder.
