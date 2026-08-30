@@ -18,7 +18,7 @@ npm install @stackline/resolve-url-loader
 Existing source can retain the historical package key with an npm alias:
 
 ```sh
-npm install resolve-url-loader@npm:@stackline/resolve-url-loader@1.0.1
+npm install resolve-url-loader@npm:@stackline/resolve-url-loader
 ```
 
 Use it immediately after `sass-loader`, with source maps enabled throughout:

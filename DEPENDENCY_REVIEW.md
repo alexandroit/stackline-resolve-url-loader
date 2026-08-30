@@ -16,9 +16,8 @@ known advisory, an invalid dependency tree, or a failed clean installation.
 | `postcss@8.5.26` | CSS parser and transformer | Current release; source active |
 | `nanoid@3.3.18` | PostCSS transitive runtime | Maintained source; Node 12-compatible line |
 | `picocolors@1.1.1` | PostCSS transitive runtime | Current release; source not archived |
-| `source-map-js@1.2.1` | PostCSS transitive source maps | Current release; source active; zero dependencies |
+| `source-map-js@1.2.1` | Direct synchronous consumer through the `source-map` alias and PostCSS transitive source maps | Current release; source active; zero dependencies |
 | `regex-parser@2.3.1` | Loader regular-expression parser | Current release; source not archived; zero dependencies |
-| `source-map@0.6.1` | Required synchronous source-map consumer | Upstream source active; pinned compatibility line; zero dependencies |
 
 Primary evidence:
 
@@ -30,10 +29,9 @@ Primary evidence:
 - https://registry.npmjs.org/picocolors
 - https://registry.npmjs.org/source-map-js
 - https://registry.npmjs.org/regex-parser
-- https://registry.npmjs.org/source-map
 - https://github.com/alexandroit/stackline-loader-utils
 - https://github.com/postcss/postcss
-- https://github.com/mozilla/source-map
+- https://github.com/7rulnik/source-map-js
 
 Before 2026-11-30, or earlier if npm/GitHub metadata changes, repeat the full
 review from registry and source data. Any newly abandoned runtime edge must be

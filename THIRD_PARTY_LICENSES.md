@@ -19,8 +19,7 @@ license identifier, source text, and production lockfile component.
 | picocolors 1.1.1 | ISC | `licenses/picocolors-1.1.1-ISC.txt` |
 | postcss 8.5.26 | MIT | `licenses/postcss-8.5.26-MIT.txt` |
 | regex-parser 2.3.1 | MIT | `licenses/regex-parser-2.3.1-MIT.txt` |
-| source-map 0.6.1 | BSD-3-Clause | `licenses/source-map-0.6.1-BSD-3-Clause.txt` |
-| source-map-js 1.2.1 | BSD-3-Clause | `licenses/source-map-js-1.2.1-BSD-3-Clause.txt` |
+| source-map-js 1.2.1 (direct `source-map` alias and PostCSS runtime) | BSD-3-Clause | `licenses/source-map-js-1.2.1-BSD-3-Clause.txt` |
 
 Transitive production components are inventoried from the frozen lockfile in
 the same directory. The package's own [LICENSE](LICENSE) retains the upstream

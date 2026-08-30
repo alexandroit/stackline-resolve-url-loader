@@ -1,5 +1,5 @@
 import assert from 'node:assert/strict'
-import { execFileSync } from 'node:child_process'
+import { execFileSync, spawnSync } from 'node:child_process'
 import { mkdir, mkdtemp, readFile, rm, writeFile } from 'node:fs/promises'
 import os from 'node:os'
 import path from 'node:path'
@@ -17,6 +17,18 @@ function run(command, arguments_, cwd = root, stdio = ['ignore', 'pipe', 'pipe']
     env: { ...process.env, NO_UPDATE_NOTIFIER: '1' },
     stdio
   })
+}
+
+function cleanInstall (arguments_, cwd) {
+  const result = spawnSync(npm, arguments_, {
+    cwd,
+    encoding: 'utf8',
+    env: { ...process.env, NO_UPDATE_NOTIFIER: '1' },
+    stdio: ['ignore', 'pipe', 'pipe']
+  })
+  const transcript = `${result.stdout || ''}\n${result.stderr || ''}`
+  assert.equal(result.status, 0, transcript)
+  assert.doesNotMatch(transcript, /npm warn|deprecated|vulnerabilit/i)
 }
 
 try {
@@ -38,7 +50,7 @@ try {
       'resolve-url-loader': `file:../${archive}`
     }
   }, null, 2) + '\n')
-  run(npm, ['install', '--ignore-scripts', '--omit=dev', '--no-audit', '--no-fund'], consumer)
+  cleanInstall(['install', '--ignore-scripts', '--omit=dev', '--no-audit', '--no-fund'], consumer)
 
   await writeFile(path.join(consumer, 'commonjs.cjs'), `
 const assert = require('node:assert/strict')
@@ -52,7 +64,7 @@ assert.deepEqual(Object.keys(scoped), Object.keys(legacy))
 assert.equal(scoped.defaultJoin, scopedJoin.defaultJoin)
 assert.equal(typeof legacyValue, 'function')
 assert.equal(typeof vendorProcess, 'function')
-assert.equal(require('@stackline/resolve-url-loader/package.json').version, '1.0.1')
+assert.equal(require('@stackline/resolve-url-loader/package.json').version, '1.0.2')
 console.log('packed scoped, historical-key, and deep CommonJS entries passed')
 `)
   await writeFile(path.join(consumer, 'module.mjs'), `
@@ -77,11 +89,13 @@ console.log('packed root ESM bridge and explicit ESM facade passed')
     'loader-utils': 'npm:@stackline/loader-utils@1.0.2',
     postcss: '8.5.26',
     'regex-parser': '2.3.1',
-    'source-map': '0.6.1'
+    'source-map': 'npm:source-map-js@1.2.1'
   })
   assert.equal(installed.dependencies['adjust-sourcemap-loader'], undefined)
   const tree = JSON.parse(run(npm, ['ls', '--omit=dev', '--all', '--json'], consumer))
   assert.equal(tree.problems, undefined)
+  const audit = JSON.parse(run(npm, ['audit', '--omit=dev', '--audit-level=low', '--json'], consumer))
+  assert.equal(audit.metadata.vulnerabilities.total, 0)
   console.log('Packed scoped/alias, CJS/ESM, deep-entry, and production-tree consumers passed.')
 } finally {
   await rm(temporary, { force: true, recursive: true })

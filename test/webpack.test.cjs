@@ -59,7 +59,13 @@ async function runWebpack() {
           use: [
             { loader: capturePath, options: { label: `webpack${major}` } },
             { loader: loaderPath, options: { sourceMap: true } },
-            { loader: sassLoaderPath, options: { sourceMap: true } }
+            {
+              loader: sassLoaderPath,
+              options: {
+                sourceMap: true,
+                sassOptions: { silenceDeprecations: ['legacy-js-api'] }
+              }
+            }
           ]
         }]
       },

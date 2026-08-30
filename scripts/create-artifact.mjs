@@ -24,8 +24,8 @@ const sourceClean = process.env.STACKLINE_SOURCE_CLEAN || ''
 
 assert.match(sourceCommit, /^[0-9a-f]{40}$/,
   'STACKLINE_SOURCE_COMMIT must identify the frozen 40-character source commit')
-assert.equal(sourceTag, 'stackline-v1.0.1',
-  'STACKLINE_SOURCE_TAG must be stackline-v1.0.1')
+assert.equal(sourceTag, 'stackline-v1.0.2',
+  'STACKLINE_SOURCE_TAG must be stackline-v1.0.2')
 assert.equal(sourceClean, '1',
   'STACKLINE_SOURCE_CLEAN=1 must attest that the project-scoped source is clean')
 
@@ -140,7 +140,6 @@ try {
       ['picocolors', '1.1.1', 'ISC', 'licenses/picocolors-1.1.1-ISC.txt'],
       ['postcss', '8.5.26', 'MIT', 'licenses/postcss-8.5.26-MIT.txt'],
       ['regex-parser', '2.3.1', 'MIT', 'licenses/regex-parser-2.3.1-MIT.txt'],
-      ['source-map', '0.6.1', 'BSD-3-Clause', 'licenses/source-map-0.6.1-BSD-3-Clause.txt'],
       ['source-map-js', '1.2.1', 'BSD-3-Clause', 'licenses/source-map-js-1.2.1-BSD-3-Clause.txt']
     ].map(([name, version, license, file]) => ({ name, version, license, file })),
     notices: ['NOTICE', 'THIRD_PARTY_LICENSES.md']
@@ -155,7 +154,7 @@ try {
   const parsed = JSON.parse(sbom)
   const components = [parsed.metadata && parsed.metadata.component, ...(parsed.components || [])].filter(Boolean)
   assert.ok(components.some(({ name, version }) =>
-    name === '@stackline/resolve-url-loader' && version === '1.0.1'))
+    name === '@stackline/resolve-url-loader' && version === '1.0.2'))
   await writeFile(path.join(staging, 'sbom.cdx.json'), sbom)
   await rm(sbomConsumer, { force: true, recursive: true })
 

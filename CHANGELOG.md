@@ -1,5 +1,14 @@
 # Changelog
 
+## 1.0.2 - 2026-08-30
+
+- Replace the 2017 `source-map@0.6.1` runtime with the maintained,
+  synchronous `source-map@npm:source-map-js@1.2.1` compatibility alias.
+- Preserve every existing `require('source-map')` call while removing the old
+  package from the production graph.
+- Verify differential source maps, Windows drive paths, real Webpack 4 and 5
+  builds, clean direct and alias installs, licenses, audits, CI, and CodeQL.
+
 ## 1.0.1 - 2026-08-30
 
 - Replace the archived `loader-utils@2.0.4` runtime dependency with the exact

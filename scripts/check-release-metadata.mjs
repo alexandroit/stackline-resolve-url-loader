@@ -8,7 +8,7 @@ const escapedVersion = packageJson.version.replaceAll('.', '\\.')
 
 assert.match(changelog, new RegExp(`^## ${escapedVersion} - \\d{4}-\\d{2}-\\d{2}$`, 'm'))
 assert.equal(packageJson.name, '@stackline/resolve-url-loader')
-assert.equal(packageJson.version, '1.0.1')
+assert.equal(packageJson.version, '1.0.2')
 assert.equal(packageJson.publishConfig.access, 'public')
 assert.equal(packageJson.repository.url, 'git+https://github.com/alexandroit/stackline-resolve-url-loader.git')
 assert.match(notice, /not affiliated with or endorsed by Ben Holloway/)

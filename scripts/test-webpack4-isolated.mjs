@@ -80,7 +80,13 @@ const configuration = {
       use: [
         require.resolve('./capture-loader.cjs'),
         { loader: require.resolve('@stackline/resolve-url-loader'), options: { sourceMap: true } },
-        { loader: require.resolve('sass-loader'), options: { sourceMap: true } }
+        {
+          loader: require.resolve('sass-loader'),
+          options: {
+            sourceMap: true,
+            sassOptions: { silenceDeprecations: ['legacy-js-api'] }
+          }
+        }
       ]
     }]
   },

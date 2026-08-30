@@ -1,10 +1,11 @@
 import assert from 'node:assert/strict'
 import { execFileSync } from 'node:child_process'
-import { mkdtemp, rm, writeFile } from 'node:fs/promises'
+import { mkdtemp, readFile, rm, writeFile } from 'node:fs/promises'
 import os from 'node:os'
 import path from 'node:path'
 
 const npm = process.platform === 'win32' ? 'npm.cmd' : 'npm'
+const packageJson = JSON.parse(await readFile(new URL('../package.json', import.meta.url), 'utf8'))
 const registry = process.env.STACKLINE_TEST_REGISTRY || 'http://127.0.0.1:4873/'
 const temporary = await mkdtemp(path.join(os.tmpdir(), 'stackline-resolve-url-registry-'))
 
@@ -23,8 +24,8 @@ try {
     private: true,
     type: 'module',
     dependencies: {
-      '@stackline/resolve-url-loader': '1.0.1',
-      'resolve-url-loader': 'npm:@stackline/resolve-url-loader@1.0.1'
+      '@stackline/resolve-url-loader': packageJson.version,
+      'resolve-url-loader': `npm:@stackline/resolve-url-loader@${packageJson.version}`
     }
   }, null, 2) + '\n')
   run(npm, [

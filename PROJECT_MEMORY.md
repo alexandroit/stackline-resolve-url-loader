@@ -3,7 +3,7 @@
 ## Frozen compatibility inputs
 
 - Compatibility baseline: `@stackline/resolve-url-loader@1.0.0`.
-- Current release candidate: `@stackline/resolve-url-loader@1.0.1`.
+- Current release candidate: `@stackline/resolve-url-loader@1.0.2`.
 - Resolve URL baseline: `resolve-url-loader@5.0.0`, source commit
   `e2695cde68f325f617825e168173df92236efb93`.
 - Vendored source-map baseline: `adjust-sourcemap-loader@4.0.0`, commit
@@ -19,8 +19,9 @@
 - Do not add a restrictive `exports` map. Historical extensionless and `.js`
   deep imports must keep resolving. `index.mjs` is the explicit facade and the
   CommonJS root also supports Node's default/named ESM bridge.
-- Keep `source-map@0.6.1` because its synchronous consumer is part of the loader
-  algorithm. Pin the Node-12-compatible production graph exactly.
+- Preserve the synchronous `source-map` consumer through
+  `source-map@npm:source-map-js@1.2.1`. Pin the Node-12-compatible production
+  graph exactly.
 - Replace the archived `loader-utils` runtime with the exact
   `loader-utils@npm:@stackline/loader-utils@1.0.2` alias. Review every runtime
   dependency recursively and stop at maintained zero-dependency leaves.

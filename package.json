@@ -1,6 +1,6 @@
 {
   "name": "@stackline/resolve-url-loader",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Compatibility-first webpack Sass URL rebasing loader with maintained packaging and first-party types",
   "type": "commonjs",
   "main": "./index.js",
@@ -86,7 +86,7 @@
     "loader-utils": "npm:@stackline/loader-utils@1.0.2",
     "postcss": "8.5.26",
     "regex-parser": "2.3.1",
-    "source-map": "0.6.1"
+    "source-map": "npm:source-map-js@1.2.1"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "0.18.5",

@@ -15,7 +15,7 @@ assert.deepEqual(packageJson.dependencies, {
   'loader-utils': 'npm:@stackline/loader-utils@1.0.2',
   postcss: '8.5.26',
   'regex-parser': '2.3.1',
-  'source-map': '0.6.1'
+  'source-map': 'npm:source-map-js@1.2.1'
 })
 assert.match(ownLicense, /Copyright \(c\) 2016 Ben Holloway/)
 assert.equal(vendoredLicense, upstreamVendoredLicense)
@@ -28,7 +28,7 @@ const expected = [
   ['picocolors', '1.1.1', 'ISC', 'LICENSE', 'picocolors-1.1.1-ISC.txt'],
   ['postcss', '8.5.26', 'MIT', 'LICENSE', 'postcss-8.5.26-MIT.txt'],
   ['regex-parser', '2.3.1', 'MIT', 'LICENSE', 'regex-parser-2.3.1-MIT.txt'],
-  ['source-map', '0.6.1', 'BSD-3-Clause', 'LICENSE', 'source-map-0.6.1-BSD-3-Clause.txt'],
+  ['source-map', '1.2.1', 'BSD-3-Clause', 'LICENSE', 'source-map-js-1.2.1-BSD-3-Clause.txt'],
   ['source-map-js', '1.2.1', 'BSD-3-Clause', 'LICENSE', 'source-map-js-1.2.1-BSD-3-Clause.txt']
 ]
 
@@ -46,4 +46,4 @@ const production = Object.entries(lock.packages)
   .filter(([location, metadata]) => location && !metadata.dev)
   .map(([location]) => location)
 assert.deepEqual(production.sort(), expected.map(([name]) => `node_modules/${name}`).sort())
-console.log('Production and vendored license inventory passed for all ten components.')
+console.log('Alias-aware production and vendored license inventory passed.')
