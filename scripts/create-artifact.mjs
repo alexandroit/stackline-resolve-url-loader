@@ -24,8 +24,8 @@ const sourceClean = process.env.STACKLINE_SOURCE_CLEAN || ''
 
 assert.match(sourceCommit, /^[0-9a-f]{40}$/,
   'STACKLINE_SOURCE_COMMIT must identify the frozen 40-character source commit')
-assert.equal(sourceTag, 'stackline-v1.0.0',
-  'STACKLINE_SOURCE_TAG must be stackline-v1.0.0')
+assert.equal(sourceTag, 'stackline-v1.0.1',
+  'STACKLINE_SOURCE_TAG must be stackline-v1.0.1')
 assert.equal(sourceClean, '1',
   'STACKLINE_SOURCE_CLEAN=1 must attest that the project-scoped source is clean')
 
@@ -133,10 +133,9 @@ try {
       sourceCommit: '5f173eef'
     }],
     productionDependencies: [
-      ['big.js', '5.2.2', 'MIT', 'licenses/big.js-5.2.2-MIT.txt'],
       ['emojis-list', '3.0.0', 'MIT', 'licenses/emojis-list-3.0.0-MIT.txt'],
       ['json5', '2.2.3', 'MIT', 'licenses/json5-2.2.3-MIT.txt'],
-      ['loader-utils', '2.0.4', 'MIT', 'licenses/loader-utils-2.0.4-MIT.txt'],
+      ['@stackline/loader-utils', '1.0.2', 'MIT', 'licenses/stackline-loader-utils-1.0.2-MIT.txt'],
       ['nanoid', '3.3.18', 'MIT', 'licenses/nanoid-3.3.18-MIT.txt'],
       ['picocolors', '1.1.1', 'ISC', 'licenses/picocolors-1.1.1-ISC.txt'],
       ['postcss', '8.5.26', 'MIT', 'licenses/postcss-8.5.26-MIT.txt'],
@@ -156,7 +155,7 @@ try {
   const parsed = JSON.parse(sbom)
   const components = [parsed.metadata && parsed.metadata.component, ...(parsed.components || [])].filter(Boolean)
   assert.ok(components.some(({ name, version }) =>
-    name === '@stackline/resolve-url-loader' && version === '1.0.0'))
+    name === '@stackline/resolve-url-loader' && version === '1.0.1'))
   await writeFile(path.join(staging, 'sbom.cdx.json'), sbom)
   await rm(sbomConsumer, { force: true, recursive: true })
 

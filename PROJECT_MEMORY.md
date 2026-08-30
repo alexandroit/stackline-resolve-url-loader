@@ -2,7 +2,8 @@
 
 ## Frozen compatibility inputs
 
-- Package: `@stackline/resolve-url-loader@1.0.0`.
+- Compatibility baseline: `@stackline/resolve-url-loader@1.0.0`.
+- Current release candidate: `@stackline/resolve-url-loader@1.0.1`.
 - Resolve URL baseline: `resolve-url-loader@5.0.0`, source commit
   `e2695cde68f325f617825e168173df92236efb93`.
 - Vendored source-map baseline: `adjust-sourcemap-loader@4.0.0`, commit
@@ -20,6 +21,9 @@
   CommonJS root also supports Node's default/named ESM bridge.
 - Keep `source-map@0.6.1` because its synchronous consumer is part of the loader
   algorithm. Pin the Node-12-compatible production graph exactly.
+- Replace the archived `loader-utils` runtime with the exact
+  `loader-utils@npm:@stackline/loader-utils@1.0.2` alias. Review every runtime
+  dependency recursively and stop at maintained zero-dependency leaves.
 - Vendor adjust v4 process and codecs, license, and package metadata. Run
   `npm run check:vendor` after any intentional vendor review; never update its
   expected digest casually.
@@ -41,6 +45,19 @@ without weakening real compatibility coverage.
 
 The 2026-08-28 local gate passed. No registry publication, repository creation,
 remote automation change, adoption work, or release handoff was performed.
+
+## 2026-08-30 — recursive dependency remediation
+
+- The target's archived `loader-utils@2.0.4` dependency was traced before any
+  target release. Verdaccio-only `@stackline/loader-utils@1.0.0` and `1.0.1`
+  preflights were rejected by real Webpack compatibility tests and must never
+  be promoted. `1.0.2` preserves the complete `2.0.4` contract.
+- The maintained loader fork depends only on `emojis-list@3.0.0` and
+  `json5@2.2.3`; both are current zero-dependency leaves with non-archived
+  source repositories. The full target closure is pinned, license-inventoried,
+  and must install without warnings or npm audit findings.
+- `ADOPTION_TARGETS.md` contains an independent automation policy change and
+  must remain outside this remediation commit.
 
 ## 2026-08-28 — post-release Windows CI correction
 

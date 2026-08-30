@@ -23,8 +23,8 @@ try {
     private: true,
     type: 'module',
     dependencies: {
-      '@stackline/resolve-url-loader': '1.0.0',
-      'resolve-url-loader': 'npm:@stackline/resolve-url-loader@1.0.0'
+      '@stackline/resolve-url-loader': '1.0.1',
+      'resolve-url-loader': 'npm:@stackline/resolve-url-loader@1.0.1'
     }
   }, null, 2) + '\n')
   run(npm, [

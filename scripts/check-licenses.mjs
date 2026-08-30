@@ -12,7 +12,7 @@ const vendoredLicense = await readFile(path.join(root, 'lib/vendor/adjust-source
 const upstreamVendoredLicense = await readFile(path.join(root, 'node_modules/adjust-sourcemap-loader/LICENSE'), 'utf8')
 
 assert.deepEqual(packageJson.dependencies, {
-  'loader-utils': '2.0.4',
+  'loader-utils': 'npm:@stackline/loader-utils@1.0.2',
   postcss: '8.5.26',
   'regex-parser': '2.3.1',
   'source-map': '0.6.1'
@@ -21,10 +21,9 @@ assert.match(ownLicense, /Copyright \(c\) 2016 Ben Holloway/)
 assert.equal(vendoredLicense, upstreamVendoredLicense)
 
 const expected = [
-  ['big.js', '5.2.2', 'MIT', 'LICENCE', 'big.js-5.2.2-MIT.txt'],
   ['emojis-list', '3.0.0', 'MIT', 'LICENSE.md', 'emojis-list-3.0.0-MIT.txt'],
   ['json5', '2.2.3', 'MIT', 'LICENSE.md', 'json5-2.2.3-MIT.txt'],
-  ['loader-utils', '2.0.4', 'MIT', 'LICENSE', 'loader-utils-2.0.4-MIT.txt'],
+  ['loader-utils', '1.0.2', 'MIT', 'LICENSE', 'stackline-loader-utils-1.0.2-MIT.txt'],
   ['nanoid', '3.3.18', 'MIT', 'LICENSE', 'nanoid-3.3.18-MIT.txt'],
   ['picocolors', '1.1.1', 'ISC', 'LICENSE', 'picocolors-1.1.1-ISC.txt'],
   ['postcss', '8.5.26', 'MIT', 'LICENSE', 'postcss-8.5.26-MIT.txt'],
@@ -47,4 +46,4 @@ const production = Object.entries(lock.packages)
   .filter(([location, metadata]) => location && !metadata.dev)
   .map(([location]) => location)
 assert.deepEqual(production.sort(), expected.map(([name]) => `node_modules/${name}`).sort())
-console.log('Production and vendored license inventory passed for all eleven components.')
+console.log('Production and vendored license inventory passed for all ten components.')

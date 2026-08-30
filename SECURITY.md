@@ -19,3 +19,10 @@ abandoned development graph carries known advisories. That fixture is removed
 after the compatibility build and is absent from this package's committed
 development lock and production graph. Both committed-graph and production
 audits are release gates.
+
+The production graph is pinned and reviewed recursively. The archived upstream
+`loader-utils` dependency is replaced with `@stackline/loader-utils@1.0.2`;
+its only dependencies are the maintained leaf packages `emojis-list@3.0.0`
+and `json5@2.2.3`. Release gates require a warning-free clean install, a valid
+recursive tree, exact license inventory, and zero npm audit findings. Review
+evidence and expiry dates are recorded in [DEPENDENCY_REVIEW.md](DEPENDENCY_REVIEW.md).

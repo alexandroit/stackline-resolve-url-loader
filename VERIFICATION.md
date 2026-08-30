@@ -88,3 +88,25 @@ CodeQL run `33173045972` also passed.
   DCO and Checkmarx in addition to local target gates. The different-repository
   maintainer-decision issue is
   https://github.com/gravity-ui/app-builder/issues/352.
+
+## 2026-08-30 recursive dependency release candidate
+
+- Replaced the archived production `loader-utils@2.0.4` edge with the exact
+  `loader-utils@npm:@stackline/loader-utils@1.0.2` alias. The maintained leaf
+  was first validated against the complete upstream `2.0.4` contract and this
+  package's real Webpack 4/5 builds, then published as a byte-identical
+  Verdaccio/npm artifact.
+- A clean official-registry install added 259 development and production
+  packages without warnings and both the complete and production-only npm
+  audits reported zero vulnerabilities. The lockfile contains no Verdaccio or
+  localhost URL.
+- The production tree contains nine installed dependencies: the maintained
+  loader fork, `emojis-list`, `json5`, PostCSS and its three runtime children,
+  `regex-parser`, and the synchronous `source-map` compatibility line. The
+  exact license inventory plus the vendored processor covers all ten runtime
+  components.
+- `npm run verify`: **PASS**. Contract tests, the previously failing non-file
+  URL regression, real Webpack 5, disposable Webpack 4, TypeScript 3.9/current,
+  Node.js 12 through 24, packed scoped/alias/deep imports, 94.01% line coverage,
+  package validation, source/vendor integrity, registry signatures, and all
+  audit gates passed.

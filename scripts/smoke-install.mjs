@@ -52,7 +52,7 @@ assert.deepEqual(Object.keys(scoped), Object.keys(legacy))
 assert.equal(scoped.defaultJoin, scopedJoin.defaultJoin)
 assert.equal(typeof legacyValue, 'function')
 assert.equal(typeof vendorProcess, 'function')
-assert.equal(require('@stackline/resolve-url-loader/package.json').version, '1.0.0')
+assert.equal(require('@stackline/resolve-url-loader/package.json').version, '1.0.1')
 console.log('packed scoped, historical-key, and deep CommonJS entries passed')
 `)
   await writeFile(path.join(consumer, 'module.mjs'), `
@@ -74,7 +74,7 @@ console.log('packed root ESM bridge and explicit ESM facade passed')
   ), 'utf8'))
   assert.equal(installed.exports, undefined)
   assert.deepEqual(installed.dependencies, {
-    'loader-utils': '2.0.4',
+    'loader-utils': 'npm:@stackline/loader-utils@1.0.2',
     postcss: '8.5.26',
     'regex-parser': '2.3.1',
     'source-map': '0.6.1'

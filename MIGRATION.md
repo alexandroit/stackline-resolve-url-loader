@@ -7,7 +7,7 @@ The lowest-risk migration keeps the historical dependency key:
 ```json
 {
   "dependencies": {
-    "resolve-url-loader": "npm:@stackline/resolve-url-loader@1.0.0"
+    "resolve-url-loader": "npm:@stackline/resolve-url-loader@1.0.1"
   }
 }
 ```

@@ -4,7 +4,7 @@ Releases are built once from reviewed source with:
 
 ```sh
 STACKLINE_SOURCE_COMMIT=<40-hex-commit> \
-STACKLINE_SOURCE_TAG=stackline-v1.0.0 \
+STACKLINE_SOURCE_TAG=stackline-v1.0.1 \
 STACKLINE_SOURCE_CLEAN=1 \
 npm run artifact:prepare
 ```

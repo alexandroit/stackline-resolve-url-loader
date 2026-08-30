@@ -11,7 +11,7 @@ const loader = require('..')
 const facade = await import(new URL('../index.mjs', import.meta.url))
 
 assert.equal(packageJson.name, '@stackline/resolve-url-loader')
-assert.equal(packageJson.version, '1.0.0')
+assert.equal(packageJson.version, '1.0.1')
 assert.equal(packageJson.exports, undefined, 'deep entries must not be encapsulated by an exports map')
 assert.equal(vendorJson.name, 'adjust-sourcemap-loader')
 assert.equal(vendorJson.version, '4.0.0')

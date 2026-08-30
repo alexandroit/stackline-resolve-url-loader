@@ -12,10 +12,9 @@ license identifier, source text, and production lockfile component.
 | Component | License | Shipped text |
 | --- | --- | --- |
 | adjust-sourcemap-loader 4.0.0 (vendored) | MIT | `lib/vendor/adjust-sourcemap-loader/LICENSE` |
-| big.js 5.2.2 | MIT | `licenses/big.js-5.2.2-MIT.txt` |
 | emojis-list 3.0.0 | MIT | `licenses/emojis-list-3.0.0-MIT.txt` |
 | json5 2.2.3 | MIT | `licenses/json5-2.2.3-MIT.txt` |
-| loader-utils 2.0.4 | MIT | `licenses/loader-utils-2.0.4-MIT.txt` |
+| @stackline/loader-utils 1.0.2 | MIT | `licenses/stackline-loader-utils-1.0.2-MIT.txt` |
 | nanoid 3.3.18 | MIT | `licenses/nanoid-3.3.18-MIT.txt` |
 | picocolors 1.1.1 | ISC | `licenses/picocolors-1.1.1-ISC.txt` |
 | postcss 8.5.26 | MIT | `licenses/postcss-8.5.26-MIT.txt` |

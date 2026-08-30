@@ -18,7 +18,7 @@ npm install @stackline/resolve-url-loader
 Existing source can retain the historical package key with an npm alias:
 
 ```sh
-npm install resolve-url-loader@npm:@stackline/resolve-url-loader@1.0.0
+npm install resolve-url-loader@npm:@stackline/resolve-url-loader@1.0.1
 ```
 
 Use it immediately after `sass-loader`, with source maps enabled throughout:
@@ -41,6 +41,11 @@ module.exports = {
 
 The upstream `root`, `silent`, `removeCR`, `debug`, `sourceMap`, and `join`
 options are unchanged. Query strings and fragments are always retained.
+
+The runtime dependency graph is exact, recursively reviewed, and audit-clean.
+The archived `loader-utils` project is replaced by the maintained
+`@stackline/loader-utils` compatibility fork; no abandoned package remains in
+the production graph.
 
 ## ESM and join helpers
 
