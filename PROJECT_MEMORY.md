@@ -60,6 +60,27 @@ remote automation change, adoption work, or release handoff was performed.
 - `ADOPTION_TARGETS.md` contains an independent automation policy change and
   must remain outside this remediation commit.
 
+## 2026-08-30 — source-map dependency hardening published
+
+- Published `@stackline/resolve-url-loader@1.0.2` after replacing the legacy
+  direct `source-map@0.6.1` edge with
+  `source-map@npm:source-map-js@1.2.1`. The alias preserves the synchronous
+  `require('source-map')` contract while terminating that branch at a
+  maintained zero-dependency implementation.
+- The 75-file artifact was built once from tagged commit
+  `d17ada0ee4bd294d5b09695dee2b7ca08ca160aa`; SHA-256
+  `c7012892dbc9e1284b37d5dfe45dec8bf3312a239056d70a59cb57da76519e74`.
+  Verdaccio, official npm, and the immutable GitHub release serve identical
+  bytes. Official npm records the publication at `2026-08-30T09:15:50.247Z`
+  and `latest` is `1.0.2`.
+- Main CI run `33303452757`, tag CI run `33303569442`, and CodeQL run
+  `33303452722` passed. The immutable release contains the tarball, complete
+  checksums, inventory, licenses, release notes, and CycloneDX SBOM:
+  https://github.com/alexandroit/stackline-resolve-url-loader/releases/tag/stackline-v1.0.2.
+- Preserve the alias and its differential, Webpack 4/5, Node 12-24,
+  TypeScript 3.9/current, warning-free install, registry alias, license, and
+  zero-audit gates unless a future replacement proves the same compatibility.
+
 ## 2026-08-28 — post-release Windows CI correction
 
 The immutable artifact and all shipped runtime files remain unchanged. The

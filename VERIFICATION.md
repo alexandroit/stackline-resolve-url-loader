@@ -110,3 +110,34 @@ CodeQL run `33173045972` also passed.
   Node.js 12 through 24, packed scoped/alias/deep imports, 94.01% line coverage,
   package validation, source/vendor integrity, registry signatures, and all
   audit gates passed.
+
+## 2026-08-30 version 1.0.2 release verification
+
+- Replaced direct `source-map@0.6.1` with the maintained
+  `source-map@npm:source-map-js@1.2.1` compatibility alias. The resulting
+  branch has zero transitive dependencies and retains the synchronous API used
+  by this loader.
+- A clean `npm ci --ignore-scripts` installed 262 packages without warnings.
+  Production and complete audits reported zero vulnerabilities; all 262
+  packages had verified registry signatures and 44 had attestations.
+- `npm run verify`: **PASS**. Differential behavior, malformed/stress cases,
+  real Webpack 4/5 builds, Node.js 12-24, TypeScript 3.9/current, scoped and
+  historical alias installs, deep imports, licenses, package metadata, SBOM,
+  and vendored-source integrity all passed. Coverage remained 94.01% lines,
+  90.23% branches, and 92.85% functions.
+- Main CI `33303452757`, tag CI `33303569442`, and CodeQL `33303452722`:
+  **PASS**. The Windows job independently passed both Webpack generations and
+  current Dart Sass.
+- Accepted artifact: 75 files, 47,576 packed bytes, 176,636 unpacked bytes;
+  SHA-1 `299b4db419a7643bc76425d1bc0cc5e9e992b084`, SHA-256
+  `c7012892dbc9e1284b37d5dfe45dec8bf3312a239056d70a59cb57da76519e74`,
+  and integrity
+  `sha512-mtj9cN0FazltRCbiAIA9WRXK/JjbH/5r+Tatmb1215kLDeEexdBDhCnh0RL9OkxnDs7mJcy8vY91rMj3Odasew==`.
+- Verdaccio and official npm registry consumers passed direct scoped, exact
+  npm-alias, CommonJS, ESM, and deep-entry smokes with valid production trees.
+  Downloaded tarballs from both registries were byte-identical to the accepted
+  artifact. Official npm records `1.0.2` at `2026-08-30T09:15:50.247Z` and
+  exposes it as `latest`.
+- GitHub release ID `379232845` reports `immutable: true` and contains all ten
+  checksummed artifact, inventory, license, SBOM, notes, and checksum assets:
+  https://github.com/alexandroit/stackline-resolve-url-loader/releases/tag/stackline-v1.0.2.
