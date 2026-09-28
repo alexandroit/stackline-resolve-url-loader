@@ -154,7 +154,7 @@ try {
   const parsed = JSON.parse(sbom)
   const components = [parsed.metadata && parsed.metadata.component, ...(parsed.components || [])].filter(Boolean)
   assert.ok(components.some(({ name, version }) =>
-    name === '@stackline/resolve-url-loader' && version === '1.0.2'))
+    name === '@stackline/resolve-url-loader' && version === '1.0.3'))
   await writeFile(path.join(staging, 'sbom.cdx.json'), sbom)
   await rm(sbomConsumer, { force: true, recursive: true })
 

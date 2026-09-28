@@ -64,7 +64,7 @@ assert.deepEqual(Object.keys(scoped), Object.keys(legacy))
 assert.equal(scoped.defaultJoin, scopedJoin.defaultJoin)
 assert.equal(typeof legacyValue, 'function')
 assert.equal(typeof vendorProcess, 'function')
-assert.equal(require('@stackline/resolve-url-loader/package.json').version, '1.0.2')
+assert.equal(require('@stackline/resolve-url-loader/package.json').version, '1.0.3')
 console.log('packed scoped, historical-key, and deep CommonJS entries passed')
 `)
   await writeFile(path.join(consumer, 'module.mjs'), `
