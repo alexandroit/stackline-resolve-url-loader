@@ -21,11 +21,13 @@ const npm = process.platform === 'win32' ? 'npm.cmd' : 'npm'
 const sourceCommit = process.env.STACKLINE_SOURCE_COMMIT || ''
 const sourceTag = process.env.STACKLINE_SOURCE_TAG || ''
 const sourceClean = process.env.STACKLINE_SOURCE_CLEAN || ''
+const packageJson = JSON.parse(await readFile(path.join(root, 'package.json'), 'utf8'))
+const expectedTag = `stackline-v${packageJson.version}`
 
 assert.match(sourceCommit, /^[0-9a-f]{40}$/,
   'STACKLINE_SOURCE_COMMIT must identify the frozen 40-character source commit')
-assert.equal(sourceTag, 'stackline-v1.0.2',
-  'STACKLINE_SOURCE_TAG must be stackline-v1.0.2')
+assert.equal(sourceTag, expectedTag,
+  `STACKLINE_SOURCE_TAG must be ${expectedTag}`)
 assert.equal(sourceClean, '1',
   'STACKLINE_SOURCE_CLEAN=1 must attest that the project-scoped source is clean')
 
