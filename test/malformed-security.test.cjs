@@ -10,6 +10,25 @@ const { runLoader } = require('./helpers/run-loader.cjs')
 
 const resourcePath = path.join(__dirname, 'malformed.css')
 
+test('vendored error formatting preserves upstream whitespace and argument coercion', () => {
+  const getError = require('../lib/vendor/adjust-sourcemap-loader/lib/process/get-error')
+  const upstream = require('adjust-sourcemap-loader/lib/process/get-error')
+  const inputs = [[], ['plain'], ['  leading and trailing  '], ['a\n b'],
+    ['a \n\t\n\r b'], ['\n\n'], ['a\u00a0\n\u2028b'], [null, undefined, 42], ['a', 'b\n c']]
+  for (const input of inputs) assert.equal(getError(...input).message, upstream(...input).message)
+})
+
+test('vendored error formatting handles a long whitespace run without blocking', () => {
+  const { execFileSync } = require('node:child_process')
+  const script = `
+    const assert = require('node:assert/strict')
+    const getError = require(${JSON.stringify(require.resolve('../lib/vendor/adjust-sourcemap-loader/lib/process/get-error'))})
+    const message = 'start' + ' '.repeat(1000000) + 'end'
+    assert.equal(getError(message).message, 'adjust-sourcemap-loader:\\n  ' + message)
+  `
+  execFileSync(process.execPath, ['-e', script], { timeout: 5000, stdio: 'pipe' })
+})
+
 test('loader, join, root, and source-map misconfigurations retain error categories', async () => {
   const cases = [
     {

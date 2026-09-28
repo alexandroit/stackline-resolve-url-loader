@@ -5,7 +5,8 @@ import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 
 const vendor = fileURLToPath(new URL('../lib/vendor/adjust-sourcemap-loader/', import.meta.url))
-const expectedDigest = 'bc0f717e25591e1ff54e176f7c6bd71ac2e5490b4ef8cb63b0ef8c735eae6dba'
+// Reviewed v4 baseline with the linear-time error formatting patch documented in NOTICE.
+const expectedDigest = '614507a63a737555a473c995cbb1e061c88d6bcefe5c9c8e869c839764be977f'
 
 async function list(directory) {
   const entries = await readdir(directory, { withFileTypes: true })
@@ -25,6 +26,6 @@ for (const file of files) {
   hash.update('\0')
 }
 const actualDigest = hash.digest('hex')
-assert.equal(actualDigest, expectedDigest, 'vendored v4 processor/codecs must remain provenance-identical')
+assert.equal(actualDigest, expectedDigest, 'vendored v4 processor/codecs must match the reviewed security patch')
 assert.equal(files.filter((file) => file.endsWith('.js')).length, 25)
 console.log(`Vendored adjust-sourcemap-loader@4 integrity passed (${actualDigest}).`)
