@@ -135,13 +135,14 @@ try {
       sourceCommit: '5f173eef'
     }],
     productionDependencies: [
-      ['emojis-list', '3.0.0', 'MIT', 'licenses/emojis-list-3.0.0-MIT.txt'],
-      ['json5', '2.2.3', 'MIT', 'licenses/json5-2.2.3-MIT.txt'],
-      ['@stackline/loader-utils', '1.0.2', 'MIT', 'licenses/stackline-loader-utils-1.0.2-MIT.txt'],
+      ['@stackline/emojis-list', '1.0.0', 'MIT', 'licenses/emojis-list-3.0.0-MIT.txt'],
+      ['@stackline/json5', '1.0.0', 'MIT', 'licenses/json5-2.2.3-MIT.txt'],
+      ['@stackline/loader-utils', '1.0.4', 'MIT', 'licenses/stackline-loader-utils-1.0.2-MIT.txt'],
       ['nanoid', '3.3.18', 'MIT', 'licenses/nanoid-3.3.18-MIT.txt'],
       ['picocolors', '1.1.1', 'ISC', 'licenses/picocolors-1.1.1-ISC.txt'],
       ['postcss', '8.5.26', 'MIT', 'licenses/postcss-8.5.26-MIT.txt'],
-      ['regex-parser', '2.3.1', 'MIT', 'licenses/regex-parser-2.3.1-MIT.txt'],
+      ['@stackline/regex-parser', '1.0.0', 'MIT', 'licenses/regex-parser-2.3.1-MIT.txt'],
+      ['@stackline/source-map-js', '1.0.0', 'BSD-3-Clause', 'licenses/source-map-js-1.2.1-BSD-3-Clause.txt'],
       ['source-map-js', '1.2.1', 'BSD-3-Clause', 'licenses/source-map-js-1.2.1-BSD-3-Clause.txt']
     ].map(([name, version, license, file]) => ({ name, version, license, file })),
     notices: ['NOTICE', 'THIRD_PARTY_LICENSES.md']
@@ -156,7 +157,7 @@ try {
   const parsed = JSON.parse(sbom)
   const components = [parsed.metadata && parsed.metadata.component, ...(parsed.components || [])].filter(Boolean)
   assert.ok(components.some(({ name, version }) =>
-    name === '@stackline/resolve-url-loader' && version === '1.0.3'))
+    name === '@stackline/resolve-url-loader' && version === '1.0.4'))
   await writeFile(path.join(staging, 'sbom.cdx.json'), sbom)
   await rm(sbomConsumer, { force: true, recursive: true })
 

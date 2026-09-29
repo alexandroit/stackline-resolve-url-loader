@@ -1,6 +1,6 @@
 {
   "name": "@stackline/resolve-url-loader",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "Compatibility-first webpack Sass URL rebasing loader with maintained packaging and first-party types",
   "type": "commonjs",
   "main": "./index.js",
@@ -26,7 +26,8 @@
     "README.md",
     "SECURITY.md",
     "THIRD_PARTY_LICENSES.md",
-    "VERIFICATION.md"
+    "VERIFICATION.md",
+    "DEPENDENCY_UPDATES.md"
   ],
   "scripts": {
     "clean": "node scripts/clean.mjs",
@@ -84,10 +85,10 @@
     "access": "public"
   },
   "dependencies": {
-    "loader-utils": "npm:@stackline/loader-utils@1.0.2",
+    "loader-utils": "npm:@stackline/loader-utils@1.0.4",
     "postcss": "8.5.26",
-    "regex-parser": "2.3.1",
-    "source-map": "npm:source-map-js@1.2.1"
+    "regex-parser": "npm:@stackline/regex-parser@1.0.0",
+    "source-map": "npm:@stackline/source-map-js@1.0.0"
   },
   "devDependencies": {
     "@arethetypeswrong/cli": "0.18.5",

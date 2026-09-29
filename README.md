@@ -11,7 +11,7 @@
 **[Issues](https://github.com/alexandroit/stackline-resolve-url-loader/issues)** |
 **[Repository](https://github.com/alexandroit/stackline-resolve-url-loader)**
 
-**Package version:** `1.0.3`
+**Package version:** `1.0.4`
 
 ## Why this package?
 
@@ -28,7 +28,7 @@ upstream project. The upstream MIT license and attribution are preserved.
 
 | Item | Value |
 | --- | --- |
-| Package | `@stackline/resolve-url-loader@1.0.3` |
+| Package | `@stackline/resolve-url-loader@1.0.4` |
 | Node.js runtime | `>=12` |
 | CommonJS / primary entry | `./index.js` |
 | ES module entry | `./index.mjs` |
@@ -141,3 +141,5 @@ Report reproducible package issues in the [issue tracker](https://github.com/ale
 MIT. See [the license](https://github.com/alexandroit/stackline-resolve-url-loader/blob/main/LICENSE) for the complete terms.
 
 Original authorship and third-party attribution are preserved in [NOTICE](https://github.com/alexandroit/stackline-resolve-url-loader/blob/main/NOTICE).
+
+Dependency maintenance for this release is documented in [DEPENDENCY_UPDATES.md](DEPENDENCY_UPDATES.md).

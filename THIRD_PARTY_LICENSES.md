@@ -12,16 +12,19 @@ license identifier, source text, and production lockfile component.
 | Component | License | Shipped text |
 | --- | --- | --- |
 | adjust-sourcemap-loader 4.0.0 (vendored) | MIT | `lib/vendor/adjust-sourcemap-loader/LICENSE` |
-| emojis-list 3.0.0 | MIT | `licenses/emojis-list-3.0.0-MIT.txt` |
-| json5 2.2.3 | MIT | `licenses/json5-2.2.3-MIT.txt` |
-| @stackline/loader-utils 1.0.2 | MIT | `licenses/stackline-loader-utils-1.0.2-MIT.txt` |
+| @stackline/emojis-list 1.0.0 (emojis-list alias; upstream 3.0.0) | MIT | `licenses/emojis-list-3.0.0-MIT.txt` |
+| @stackline/json5 1.0.0 (json5 alias; upstream 2.2.3) | MIT | `licenses/json5-2.2.3-MIT.txt` |
+| @stackline/loader-utils 1.0.4 (loader-utils alias) | MIT | `licenses/stackline-loader-utils-1.0.2-MIT.txt` |
 | nanoid 3.3.18 | MIT | `licenses/nanoid-3.3.18-MIT.txt` |
 | picocolors 1.1.1 | ISC | `licenses/picocolors-1.1.1-ISC.txt` |
 | postcss 8.5.26 | MIT | `licenses/postcss-8.5.26-MIT.txt` |
-| regex-parser 2.3.1 | MIT | `licenses/regex-parser-2.3.1-MIT.txt` |
-| source-map-js 1.2.1 (direct `source-map` alias and PostCSS runtime) | BSD-3-Clause | `licenses/source-map-js-1.2.1-BSD-3-Clause.txt` |
+| @stackline/regex-parser 1.0.0 (regex-parser alias; upstream 2.3.1) | MIT | `licenses/regex-parser-2.3.1-MIT.txt` |
+| @stackline/source-map-js 1.0.0 (source-map alias; upstream 1.2.1) | BSD-3-Clause | `licenses/source-map-js-1.2.1-BSD-3-Clause.txt` |
+| source-map-js 1.2.1 (PostCSS transitive runtime) | BSD-3-Clause | `licenses/source-map-js-1.2.1-BSD-3-Clause.txt` |
 
 Transitive production components are inventoried from the frozen lockfile in
 the same directory. The package's own [LICENSE](LICENSE) retains the upstream
 resolve-url-loader MIT text, and [NOTICE](NOTICE) records independence and
 attribution.
+
+Original license filenames identify their upstream baselines; their complete texts still match the installed maintenance packages. The vendored adjust-sourcemap-loader package.json is an integrity-checked historical source snapshot, not a workspace/install manifest; its runtime imports resolve through this package’s root aliases.

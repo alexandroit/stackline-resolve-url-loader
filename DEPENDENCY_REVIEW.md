@@ -1,5 +1,7 @@
 # Production Dependency Review
 
+Current release 1.0.4 uses the verified Stackline aliases in [DEPENDENCY_UPDATES.md](DEPENDENCY_UPDATES.md), including loader-utils 1.0.4. The dated upstream-baseline table below is retained as historical attribution; the current installed identities and licenses are in THIRD_PARTY_LICENSES.md and checked against package-lock.json.
+
 Review date: 2026-08-30
 Review expires: 2026-11-30
 

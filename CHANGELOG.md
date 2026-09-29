@@ -1,5 +1,12 @@
 # Changelog
 
+## 1.0.4 - 2026-09-28
+
+- Update development-only fast-uri to 3.1.8 for GHSA-qw65-cvwx-89v3 and GHSA-58mr-gqgx-xq4g; production audit remains clean.
+
+- Pin verified Stackline maintenance forks under the existing dependency import names; see `DEPENDENCY_UPDATES.md`.
+- Preserve the package API, supported runtimes, upstream comparison tests, and original licenses.
+
 ## 1.0.3 - 2026-09-28
 
 - Format errors containing long whitespace runs in linear time while preserving upstream error text.
