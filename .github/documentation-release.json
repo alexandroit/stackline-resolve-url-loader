@@ -1,0 +1,30 @@
+{
+  "repository": "alexandroit/stackline-resolve-url-loader",
+  "packages": [
+    {
+      "name": "@stackline/resolve-url-loader",
+      "path": "README.md",
+      "version": "1.0.5",
+      "baselineVersion": "1.0.4",
+      "keywords": [
+        "stackline",
+        "npm-package",
+        "resolve-url-loader",
+        "typescript",
+        "nodejs",
+        "webpack",
+        "loader",
+        "css",
+        "sass",
+        "source-map",
+        "url",
+        "url-rewriting"
+      ],
+      "homepage": "https://alexandro.net/docs/vanilla/resolve-url-loader/",
+      "baselineTarball": "https://registry.npmjs.org/@stackline/resolve-url-loader/-/resolve-url-loader-1.0.4.tgz",
+      "baselineIntegrity": "sha512-MnI0Av/FgvG7nSNhTGk5GO7L0YcgrHEOcRp2iTN0yfSWzUMevzlMMzDNnmT3Fy5hHSsSK8hpZnwRFYxKafk17g==",
+      "expectedSha512": "160df1c16f6bbd914b688f23cf8c07c3928bde47d75bb6515e52b045567ac600d2b3f8f80f8abb7c75bd77afabe1fd4d3eed6e2b2c0f96b0db5bab439eb5e816",
+      "tag": "docs-stackline-resolve-url-loader-v1.0.5"
+    }
+  ]
+}
