@@ -1,6 +1,6 @@
 {
   "name": "@stackline/resolve-url-loader",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "Compatibility-first webpack Sass URL rebasing loader with maintained packaging and first-party types",
   "type": "commonjs",
   "main": "./index.js",
@@ -64,13 +64,17 @@
     "url": "https://github.com/alexandroit/stackline-resolve-url-loader/issues"
   },
   "keywords": [
+    "stackline",
+    "npm-package",
+    "resolve-url-loader",
+    "typescript",
+    "nodejs",
     "webpack",
     "loader",
     "css",
     "sass",
     "source-map",
     "url",
-    "stackline",
     "url-rewriting"
   ],
   "author": "Stackline Maintainers",
