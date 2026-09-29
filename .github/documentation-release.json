@@ -4,7 +4,7 @@
     {
       "name": "@stackline/resolve-url-loader",
       "path": "README.md",
-      "version": "1.0.5",
+      "version": "1.0.6",
       "baselineVersion": "1.0.4",
       "keywords": [
         "stackline",
@@ -23,8 +23,8 @@
       "homepage": "https://alexandro.net/docs/vanilla/resolve-url-loader/",
       "baselineTarball": "https://registry.npmjs.org/@stackline/resolve-url-loader/-/resolve-url-loader-1.0.4.tgz",
       "baselineIntegrity": "sha512-MnI0Av/FgvG7nSNhTGk5GO7L0YcgrHEOcRp2iTN0yfSWzUMevzlMMzDNnmT3Fy5hHSsSK8hpZnwRFYxKafk17g==",
-      "expectedSha512": "160df1c16f6bbd914b688f23cf8c07c3928bde47d75bb6515e52b045567ac600d2b3f8f80f8abb7c75bd77afabe1fd4d3eed6e2b2c0f96b0db5bab439eb5e816",
-      "tag": "docs-stackline-resolve-url-loader-v1.0.5"
+      "expectedSha512": "45d56e0acc4d6e7a6439ba681361a3c730b6c122135d84e65fe088ce9d76a761d985388b34b642c9958410c7d4eba4a477b67a5a6851d4ba95fc8c8ff223edec",
+      "tag": "docs-stackline-resolve-url-loader-v1.0.6"
     }
   ]
 }
