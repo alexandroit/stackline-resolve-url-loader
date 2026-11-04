@@ -99,7 +99,7 @@
     "@eslint/js": "10.0.1",
     "c8": "12.0.0",
     "eslint": "10.9.1",
-    "globals": "16.4.0",
+    "globals": "17.14.0",
     "publint": "0.3.24",
     "resolve-url-loader-baseline": "npm:resolve-url-loader@5.0.0",
     "sass": "1.103.1",
