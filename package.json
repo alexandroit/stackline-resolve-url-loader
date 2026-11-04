@@ -103,7 +103,7 @@
     "publint": "0.3.24",
     "resolve-url-loader-baseline": "npm:resolve-url-loader@5.0.0",
     "sass": "1.103.1",
-    "sass-loader": "10.5.2",
+    "sass-loader": "17.1.0",
     "typescript": "7.0.2",
     "typescript-3-9": "npm:typescript@3.9.10",
     "webpack": "5.110.1"
